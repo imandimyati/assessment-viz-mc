@@ -1,0 +1,61 @@
+Class,Assessment,Grade,Total
+COM411A,Editing (BM),Troll,0
+COM411A,Editing (BM),Dreadful,0
+COM411A,Editing (BM),Poor,1
+COM411A,Editing (BM),Acceptable,5
+COM411A,Editing (BM),Exceeds Expectations,5
+COM411A,Editing (BM),Outstanding,3
+COM411A,Editing (ENG),Troll,2
+COM411A,Editing (ENG),Dreadful,3
+COM411A,Editing (ENG),Poor,4
+COM411A,Editing (ENG),Acceptable,5
+COM411A,Editing (ENG),Exceeds Expectations,0
+COM411A,Editing (ENG),Outstanding,6
+COM411A,Lead (BM),Troll,7
+COM411A,Lead (BM),Dreadful,8
+COM411A,Lead (BM),Poor,9
+COM411A,Lead (BM),Acceptable,1
+COM411A,Lead (BM),Exceeds Expectations,2
+COM411A,Lead (BM),Outstanding,3
+COM411A,Lead (ENG),Troll,4
+COM411A,Lead (ENG),Dreadful,5
+COM411A,Lead (ENG),Poor,1
+COM411A,Lead (ENG),Acceptable,2
+COM411A,Lead (ENG),Exceeds Expectations,3
+COM411A,Lead (ENG),Outstanding,4
+COM411A,General News (BM),Troll,5
+COM411A,General News (BM),Dreadful,1
+COM411A,General News (BM),Poor,2
+COM411A,General News (BM),Acceptable,3
+COM411A,General News (BM),Exceeds Expectations,4
+COM411A,General News (BM),Outstanding,5
+COM411A,General News (ENG),Troll,4
+COM411A,General News (ENG),Dreadful,5
+COM411A,General News (ENG),Poor,3
+COM411A,General News (ENG),Acceptable,4
+COM411A,General News (ENG),Exceeds Expectations,5
+COM411A,General News (ENG),Outstanding,6
+COM411A,Crime News (BM),Troll,3
+COM411A,Crime News (BM),Dreadful,5
+COM411A,Crime News (BM),Poor,1
+COM411A,Crime News (BM),Acceptable,4
+COM411A,Crime News (BM),Exceeds Expectations,1
+COM411A,Crime News (BM),Outstanding,4
+COM411A,Crime News (ENG),Troll,1
+COM411A,Crime News (ENG),Dreadful,4
+COM411A,Crime News (ENG),Poor,1
+COM411A,Crime News (ENG),Acceptable,4
+COM411A,Crime News (ENG),Exceeds Expectations,5
+COM411A,Crime News (ENG),Outstanding,5
+COM411A,Court News (BM),Troll,5
+COM411A,Court News (BM),Dreadful,5
+COM411A,Court News (BM),Poor,1
+COM411A,Court News (BM),Acceptable,5
+COM411A,Court News (BM),Exceeds Expectations,1
+COM411A,Court News (BM),Outstanding,4
+COM411A,Court News (ENG),Troll,5
+COM411A,Court News (ENG),Dreadful,1
+COM411A,Court News (ENG),Poor,4
+COM411A,Court News (ENG),Acceptable,1
+COM411A,Court News (ENG),Exceeds Expectations,4
+COM411A,Court News (ENG),Outstanding,5
