@@ -1,0 +1,192 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Assessment Results</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/dimple/2.2.0/dimple.latest.min.js"></script>
+  <!-- <script src="http://dimplejs.org/dist/dimple.v2.2.0.min.js"></script> -->
+</head>
+<body>
+  <h2>COM411A Assessment Grade Breakdown</h2>
+
+  <div id="viz"></div>
+
+  <p>
+    <b>Notes:</b><br>
+    Students are graded using the Ordinary Wizarding Level Grading System:<br>
+    <i>Outstanding = 9.5-10 marks</i><br>
+    <i>Exceeds Expectations = 8-9 marks</i><br>
+    <i>Acceptable = 6-7.5 marks</i><br>
+    <i>Poor = 4-5.5 marks</i><br>
+    <i>Dreadful = 2-3.5 marks</i><br>
+    <i>Troll = 0-1.5 marks</i>
+  </p>
+
+    <style>
+
+    h2 {
+      font-family: sans-serif;
+      font-size: 20px;
+      text-align: left;
+      padding-top: 2%;
+      padding-left: 7%;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 12px;
+      text-align: left;
+      padding-left: 4%;
+    }
+    </style>
+
+    <script type="text/javascript">
+    var padding = 55,
+    // width = 940,
+    // height = 1200;
+    width = 1200,
+    height = 500,
+    rightBar = width / 8,
+    legendheight = height/4;
+
+    var svg = d3.select("#viz")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+    d3.csv("data_sets/COM411A/com411D_editbm.csv", function (data) {
+      console.log(data);
+
+      // // Get a unique list of dates
+      // var assessments = dimple.getUniqueValues(data, "Assessment");
+      //
+      // // Set the bounds for the charts
+      // var row = 0,
+      // col = 0,
+      // top = 25,
+      // left = 60,
+      // inMarg = 15,
+      // width = 300,
+      // height = 200,
+      // totalWidth = parseFloat(svg.attr("width"));
+      //
+      // // Draw a chart for each of the 12 dates
+      // assessments.forEach(function (assessment) {
+      //
+      //   // Wrap to the row above
+      //   if (left + ((col + 1) * (width + inMarg)) > totalWidth) {
+      //     row += 1;
+      //     col = 0;
+      //   }
+      //
+      //   // Filter for the month in the iteration
+      //   var chartData = dimple.filterData(data, "Assessment", assessment);
+      //
+      //   // Use d3 to draw a text label for the month
+      //   svg
+      //   .append("text")
+      //   .attr("x", left + (col * (width + inMarg)) + (width / 2))
+      //   .attr("y", top + (row * (height + inMarg)) + (height / 2) + 12)
+      //   .style("font-family", "sans-serif")
+      //   .style("text-anchor", "middle")
+      //   .style("font-size", "20px")
+      //   .style("opacity", 0.4)
+      //   .text(chartData[0].Assessment.substring(0, 18));
+      //
+      //   // Create a chart at the correct point in the trellis
+      //   var myChart = new dimple.chart(svg, chartData);
+      //   myChart.setBounds(
+      //     left + (col * (width + inMarg)),
+      //     top + (row * (height + inMarg)),
+      //     width,
+      //     height);
+      //
+      //     // Add x and fix ordering so that all charts are the same
+      //     var x = myChart.addCategoryAxis("x", "Grade");
+      //     x.addOrderRule(["Troll", "Dreadful", "Poor",
+      //     "Acceptable", "Exceeds Expectations", "Outstanding"]);
+      //
+      //     // Add y and fix scale so that all charts are the same
+      //     var y = myChart.addMeasureAxis("y", "Total");
+      //     y.tickFormat = 'f';
+      //
+      //     // Draw the bars.  Passing null here would draw all bars with
+      //     // the same color.  Passing owner second colors by owner, which
+      //     // is normally bad practice in a bar chart but works in a trellis.
+      //     // Month is only passed here so that it shows in the tooltip.
+      //     myChart.addSeries(["Assessment", "Grade"], dimple.plot.bar);
+      //
+      //     myChart.defaultColors = [new dimple.color("rgb(158,202,225)")];
+      //
+      //     // Draw the chart
+      //     myChart.draw();
+      //
+      //     // Once drawn we can access the shapes
+      //     // If this is not in the first column remove the y text
+      //     if (col > 0) {
+      //       y.shapes.selectAll("text").remove();
+      //     }
+      //     // If this is not in the last row remove the x text
+      //     if (row < 4) {
+      //       x.shapes.selectAll("text").remove();
+      //     }
+      //     // Remove the axis labels
+      //     y.titleShape.remove();
+      //     x.titleShape.remove();
+      //
+      //     // Move to the next column
+      //     col += 1;
+      //
+      //   }, this);
+      // });
+
+      // var myChart = new dimple.chart(svg, data);
+      //     myChart.setBounds(60, 30, 940, 320)
+      //
+      //     var x = myChart.addCategoryAxis("x", ["Assessment","Grade"]);
+      //     x.addGroupOrderRule(["Troll", "Dreadful", "Poor","Acceptable", "Exceeds Expectations", "Outstanding"]);
+      //     x.addOrderRule(["Editing (BM)", "Editing (ENG)", "Lead (BM)","Lead (ENG)", "General News (BM)", "General News (ENG)",
+      //     "Crime News (BM)", "Crime News (ENG)","Court News (BM)", "Court News (ENG)"]);
+      //
+      //     myChart.addMeasureAxis("y", "Total");
+      //     myChart.addSeries("Grade", dimple.plot.bar);
+      //
+      //     var myLegend = myChart.addLegend(1020, 10, 10, 150, "left");
+      //     myLegend._getEntries = function () {
+      //                   var orderedValues = ["Troll", "Dreadful", "Poor","Acceptable", "Exceeds Expectations", "Outstanding"];
+      //                   var entries = [];
+      //                   orderedValues.forEach(function (v) {
+      //                     entries.push(
+      //                       {
+      //                         key: v,
+      //                         fill: myChart.getColor(v).fill,
+      //                         stroke: myChart.getColor(v).stroke,
+      //                         opacity: myChart.getColor(v).opacity,
+      //                         aggField: [v]
+      //                       }
+      //                     );
+      //                   }, this);
+      //
+      //                   return entries;
+      //                 };
+      //
+      //     myChart.draw();
+      //   });
+
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(60, 30, 510, 330)
+
+      var x = myChart.addCategoryAxis("x", "Grade");
+      x.addOrderRule(["Troll", "Dreadful", "Poor",
+          "Acceptable", "Exceeds Expectations", "Outstanding"]);
+
+      var y = myChart.addMeasureAxis("y", "Total");
+      y.tickFormat = '.f';
+
+      myChart.addSeries("Grade", dimple.plot.bar);
+      myChart.defaultColors = [new dimple.color("rgb(158,202,225)")];
+      myChart.draw();
+    })
+      </script>
+    </body>
+    </html>
