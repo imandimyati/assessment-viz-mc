@@ -7,7 +7,7 @@
   <!-- <script src="http://dimplejs.org/dist/dimple.v2.2.0.min.js"></script> -->
 </head>
 <body>
-  <h2>COM411A Assessment Grade Breakdown</h2>
+  <h2>COM411B Assessment Grade Breakdown</h2>
 
   <div id="viz"></div>
 
@@ -181,7 +181,7 @@
           "Acceptable", "Exceeds Expectations", "Outstanding"]);
 
       var y = myChart.addMeasureAxis("y", "Total");
-      y.tickFormat = '.f';
+      y.tickFormat = 'f';
 
       myChart.addSeries("Grade", dimple.plot.bar);
       myChart.defaultColors = [new dimple.color("rgb(158,202,225)")];
